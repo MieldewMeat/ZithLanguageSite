@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Terminal Loader</title>
+
+<style>
+    body{
+        margin:0;
+        background:black;
+        color:#00ff88;
+        font-family:monospace;
+        overflow:hidden;
+    }
+
+    #loader{
+        position:fixed;
+        width:100%;
+        height:100%;
+        background:black;
+        padding:20px;
+        box-sizing:border-box;
+    }
+
+    #terminal{
+        white-space: pre;
+        font-size:18px;
+    }
+
+    .cursor{
+        display:inline-block;
+        width:10px;
+        animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink{
+        50%{
+            opacity:0;
+        }
+    }
+
+    #main-content{
+        display:none;
+        padding:40px;
+    }
+</style>
+</head>
+<body>
+
+<div id="loader">
+    <div id="terminal"></div>
+</div>
+
+<div id="main-content">
+    <h1>Site carregado</h1>
+    <p>Finalmente. A máquina decidiu colaborar.</p>
+</div>
+
+<script>
+    const terminal = document.getElementById("terminal");
+
+    const lines = [
+        "       Booting system...",
+        "[ OK ] Booting system...",
+        "       Loading modules...",
+        "[ OK ] Loading modules...",
+        "       Checking assets...",
+        "[ OK ] Checking assets...",
+        "       Connecting to server...",
+        "[ OK ] Connecting to server...",
+        "       Initializing interface...",
+        "[ OK ] Initializing interface...",
+        "       Starting services...",
+        "[ OK ] Starting services...",
+        "Done."
+    ];
+
+    let displayedLines = [];
+    let index = 0;
+
+    function typeLine(){
+
+        if (index >= lines.length) {
+
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }, 500);
+
+        return;
+    }
+
+        const current = lines[index];
+
+        if(current.startsWith("[ OK ]")){
+
+            displayedLines[displayedLines.length - 1] =
+                current.replace("[ OK ]:", "");
+
+        } else {
+
+            displayedLines.push(current);
+        }
+
+        terminal.innerHTML = displayedLines.join("\n");
+
+        index++;
+
+        setTimeout(typeLine, 300);
+    }
+
+    typeLine();
+</script>
+
+</body>
+</html>
