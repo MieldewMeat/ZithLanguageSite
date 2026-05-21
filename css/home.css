@@ -31,8 +31,29 @@ h1, h2, h3, h4, h5, h6 {
     color: #00ff88;
 }
 
+.icons{
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.icon{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.icon img{
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
 
+.icon p{
+    width: 80px;
+    text-align: center;
+    overflow-wrap: break-word;
+}
 .crt-overlay {
     position: fixed;
     top: 0;
