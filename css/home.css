@@ -1,24 +1,56 @@
+/*==================
+BASE
+===================*/
+
+* {
+    box-sizing: border-box;
+}
+
 html, body{
     margin:0;
     padding:0;
+    height: 100%;
+}
+body {
     font-family: ui-monospace, monospace;
     background-color: #000000;
     color: #E87F24;
+
+    display: flex;
+    flex-direction: column;
+
+    background-image: url("/media/wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
 }
+
+/*==================
+TIPO GRAFIA
+===================*/
 
 h1, h2, h3, h4, h5, h6 {
     color: #FAF3E1;
 }
 
-#loader{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000;
+/*==================
+LAYOUT PRINCIPAL
+===================*/
+
+.main{
+    flex:1;
     display: flex;
     flex-direction: column;
+}
+
+#loader{
+    position: fixed;
+    inset: 0;
+
+    background: #000000;
+
+    display: flex;
+    flex-direction: column;
+
     z-index: 9999;
 }
 
@@ -31,35 +63,58 @@ h1, h2, h3, h4, h5, h6 {
     color: #00ff88;
 }
 
+/*==================
+ICONS
+===================*/
+
 .icons{
-    margin-top:10px;
+    margin-top:30px;
+    margin-left: 10px;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    
+    flex-wrap: wrap;
+    width: fit-content;
+
+    flex:1;
 }
 
 .icon{
+    width: 80px;
+}
+.icon a{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 .icon img{
     width: 64px;
     height: 64px;
     object-fit: contain;
+
+    filter: drop-shadow(0 0px 4px rgba(0,0,0,0.6));
 }
 
 .icon p{
     width: 80px;
     text-align: center;
+
     overflow-wrap: break-word;
+
+    color: #ffffff;
+    
+    text-shadow: 2px 2px 4px black;
 }
+
+/*==================
+EFEITOS
+===================*/
+
 .crt-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+
     pointer-events: none;
     z-index: 99999;
 
@@ -74,13 +129,14 @@ h1, h2, h3, h4, h5, h6 {
 
     mix-blend-mode: multiply;
     opacity: 0.4;
+
+    animation: flicker 0.15s infinite;
 }
 
 .crt-overlay::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
 
     background: radial-gradient(
         ellipse at center,
@@ -88,6 +144,21 @@ h1, h2, h3, h4, h5, h6 {
         rgba(0,0,0,0.6) 100%
     );
 }
+
+.crt-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
+
+    opacity: 0.05;
+    animation: noise 0.2s infinite;
+}
+
+/*==================
+ANIMAÇÕES
+===================*/
 
 @keyframes noise {
     0% { transform: translate(0,0); }
@@ -98,22 +169,49 @@ h1, h2, h3, h4, h5, h6 {
     50% { transform: translate(0,0); }
 }
 
-.crt-overlay::after {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
-    opacity: 0.05;
-    animation: noise 0.2s infinite;
-}
-
 @keyframes flicker {
     0% { opacity: 0.4; }
     50% { opacity: 0.45; }
     100% { opacity: 0.4; }
 }
 
-.crt-overlay {
-    animation: flicker 0.15s infinite;
+/*==================
+FOOTER
+===================*/
+
+footer{
+    background-color: #0000ff;
+    
+    box-shadow:
+        inset 0 10px 8px 0px rgba(69, 80, 196, 0.6),
+        inset 15px 10px 20px 10px #221e96;
+}
+
+footer a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 10px;
+
+    color:#ffffff;
+    background-color: #7dc343;
+
+    text-decoration: none;
+
+    width: fit-content;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    box-shadow: 
+        inset 0 10px 8px 0px rgba(83, 174, 92, 0.6),
+        inset -15px 10px 20px 10px rgb(36, 124, 45);
+}
+footer p{
+    text-shadow: 2px 2px 4px black;
+}
+footer img{
+    height: 24px;
+    filter: drop-shadow(0 0px 4px rgba(0,0,0,0.6));
 }

@@ -1,15 +1,15 @@
 const lines = [
     { type: "info", text: "Booting system..." },
-    { type: "ok", text: "Booting system..." },
+    { type: "ok", text: "Booting system." },
 
     { type: "info", text: "Loading modules..." },
-    { type: "ok", text: "Loading modules..." },
+    { type: "ok", text: "Loading modules." },
 
     { type: "info", text: "Checking assets..." },
-    { type: "ok", text: "Checking assets..." },
+    { type: "ok", text: "Checking assets." },
 
     { type: "info", text: "Connecting to server..." },
-    { type: "ok", text: "Connecting to server..." },
+    { type: "ok", text: "Connecting to server." },
 
     { type: "done", text: "Done"},
 ];

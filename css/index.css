@@ -1,35 +1,63 @@
+
+/*==================
+BASE
+===================*/
+
+* {
+    box-sizing: border-box;
+}
+
 html, body{
     margin:0;
     padding:0;
+    height: 100%;
+
     font-family: ui-monospace, monospace;
+
     background-color: #222222;
     color: #FAF3E1;
 }
 
-body a{
+/*==================
+TIPOGRAFIA
+===================*/
+
+a{
     color: #FF6D1F;
     font-size:20px;
+    text-decoration: none;
 }
 
+/*==================
+LAYOUT PRINCIPAL
+===================*/
 
 .center{
-    display: flex;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
+
+/*==================
+LOGO
+===================*/
 
 .logo {
     display: flex;
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+
     gap:0;
 }
 
 .logo h1{
-    font-size:100px;
+    font-size: clamp(48px, 8vw, 100px);
     margin: 0;
 }
 
