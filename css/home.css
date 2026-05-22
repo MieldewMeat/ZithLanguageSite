@@ -19,9 +19,10 @@ body {
     display: flex;
     flex-direction: column;
 
-    background-image: url("/media/wallpaper.jpg");
+    background-image: url("../media/wallpaper.jpg");
     background-size: cover;
     background-position: center;
+    min-height: 0;
 }
 
 /*==================
@@ -40,6 +41,7 @@ LAYOUT PRINCIPAL
     flex:1;
     display: flex;
     flex-direction: column;
+    min-height: 0;
 }
 
 #loader{
@@ -76,7 +78,8 @@ ICONS
     
     flex-wrap: wrap;
     width: fit-content;
-
+    min-height: 0;
+    
     flex:1;
 }
 
