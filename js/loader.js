@@ -47,4 +47,17 @@ function typeLine() {
     index++;
     setTimeout(typeLine, 300);
 }
-typeLine()
+
+window.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("loader");
+    const main = document.getElementById("main-content");
+
+    const hasBooted = localStorage.getItem("boot_done");
+    if (hasBooted) {
+        loader.style.display = "none";
+        main.style.display = "block";
+        return;
+    }
+    localStorage.setItem("boot_done", "true");
+    typeLine();
+});
