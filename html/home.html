@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Zith</title>
+        <title>ZithOS</title>
         <link rel="icon" type="image/x-icon" href="../media/Logos/logo.png">
         <link rel="stylesheet" href="../css/home.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
     </head>
     <body>
         <div id="loader">
@@ -34,12 +36,9 @@
                     </a>
                 </div>
 
-                <div class="icon">
-                    <a href="./html2/contact.html">
-                        <img src="../media/Icons/Phone.svg">
-                        <p>Contact</p>
-
-                    </a>
+                <div class="icon" onclick="openWindow('contact')">
+                    <img src="../media/Icons/Phone.svg">
+                    <p>Contact</p>
                 </div>
 
                 <div class="icon">
@@ -56,11 +55,9 @@
                     </a>
                 </div>
 
-                <div class="icon">
-                    <a href="./html2/news.html">
-                        <img src="../media/Icons/News.svg">
-                        <p>News</p>
-                    </a>
+                <div class="icon" onclick="openWindow('news')">
+                    <img src="../media/Icons/News.svg">
+                    <p>News</p>
                 </div>
 
             </div> 
@@ -71,11 +68,60 @@
                     <p>Start</p>
                 </a>
             </footer>
+        </div>
 
+        <div class="window hidden" id="news">
+            <div class="titlebar">
+                <span>News.txt</span>
+                <div class="buttons">
+                    <button>-</button>
+                    <button onclick="toggleMaximize('news')">o</button>
+                    <button onclick="closeWindow('news')">x</button>
+                </div>
+            </div>
+            <div class="content">
+                <h2>News</h2>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+                <p>Janela News</p>
+            </div>
+        </div>
+
+        <div class="window hidden" id="contact">
+            <div class="titlebar">
+                <span>contact.txt</span>
+                <div class="buttons">
+                    <button>-</button>
+                    <button onclick="toggleMaximize('contact')">o</button>
+                    <button onclick="closeWindow('contact')">x</button>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Contact</h2>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+                <p>Janela contact</p>
+            </div>
         </div>
         
         <div class="crt-overlay"></div>
         <script src="../js/loader.js"></script>
+        <script src="../js/news.js"></script>
+        <script src="../js/windows.js"></script>
     </body>
 
 </html>
