@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Home",
+        "link": "/"
+    },
+    {
+        "title": "CLI Reference",
+        "children": [
+            { "title": "Check", "link": "/check" },
+            { "title": "Build", "link": "/build" },
+            { "title": "Clean", "link": "/clean" },
+            { "title": "Compile", "link": "/compile" },
+            { "title": "Docs", "link": "/docs" },
+            { "title": "Flags", "link": "/flags" },
+            { "title": "FMT", "link": "/fmt" },
+            { "title": "New", "link": "/new" },
+            { "title": "Repl", "link": "/repl" },
+            { "title": "Run", "link": "/run" }
+        ]
+    },
+    {
+        "title": "Syntax",
+        "link": "/syntax"
+    },
+    {
+        "title": "Variables",
+        "link": "/variables"
+    },
+    {
+        "title": "Functions",
+        "link": "/functions"
+    },
+    {
+        "title": "Classes",
+        "link": "/classes"
+    },
+    {
+        "title": "Modules",
+        "link": "/modules"
+    },
+    {
+        "title": "Libraries",
+        "link": "/libraries"
+    },
+    {
+        "title": "Tools",
+        "link": "/tools"
+    },
+    {
+        "title": "Good practices",
+        "link": "/good-practices"
+    },
+    {
+        "title": "Examples",
+        "link": "/examples"
+    }
+]

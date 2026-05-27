@@ -1,0 +1,64 @@
+html body{
+    font-family: "Fira Code", monospace;
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+
+    color: white;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
+
+.lateralBar{
+    width: 500px;
+    height: 100vh;
+    background-color: rgb(58, 58, 58);
+}
+
+.top{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    min-height: 0;
+    height: 300px;
+}
+
+
+.bottom{
+    background-color: rgb(0, 0, 0);
+    flex: 1;
+}
+
+.logo{
+    min-height: 0;
+    font-size: 16px;
+    color: rgb(82, 249, 255);
+}
+
+.info{
+    color: white;
+    padding: 48px;
+    flex: 1;
+    overflow: auto;
+    height: 100%;
+}
+
+p{
+    margin: 0;
+}
+
+.lastUpdated, .madeBy, .revisedBy{
+    color:yellow
+}
+
+.owner{
+    color: gainsboro
+}
